@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #07080c;
+  --color-ink-2: #0c0e14;
+  --color-surface: #12141c;
+  --color-surface-2: #1a1d28;
+  --color-line: #2a3040;
+  --color-fg: #e8eaef;
+  --color-muted: #8b90a0;
+  --color-subtle: #5c6272;
+  --color-steel: #c8d0dc;
+  --color-cream: #f4f1ea;
+  --color-brick: #c45c4c;
+  --color-teal: #3cb8b0;
+  --color-danger: #c45c4c;
+  --color-ok: #5cba7a;
+
+  --font-display: "Press Start 2P", ui-monospace, monospace;
+  --font-sans: "Noto Sans SC", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "Press Start 2P", ui-monospace, monospace;
+
+  --radius-px: 0px;
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+}
+
+@layer base {
+  html,
+  body,
+  #app {
+    height: 100%;
+  }
+
+  html,
+  body {
+    margin: 0;
+    background: var(--color-ink);
+    color: var(--color-fg);
+    font-family: var(--font-sans);
+    overscroll-behavior: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  @media (max-width: 767px) {
+    html,
+    body {
+      overflow: hidden;
+      height: 100%;
+      user-select: none;
+      touch-action: none;
+    }
+  }
+
+  @media (min-width: 768px) {
+    html,
+    body {
+      overflow: auto;
+      min-height: 100%;
+      user-select: auto;
+      touch-action: manipulation;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+.pixel-title {
+  font-family: var(--font-display);
+  image-rendering: pixelated;
+  letter-spacing: 0.08em;
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
